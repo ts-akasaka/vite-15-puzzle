@@ -59,27 +59,28 @@
             - sliding: 15パズル用のロジック
 
 ## 依存ライブラリ
-    - react
-    - material-ui/clsx: 画面のベース
-    - utility-types: DeepReadonly等で利用
-    - immer: ステートストアの更新用
-    - eventemitter3: ステートストアへのサブスクライブ用
-    - shallowequal: 未使用。useSelectorで使用できるように組み込んでおく
+- react
+- material-ui/clsx: 画面のベース
+- utility-types: DeepReadonly等で利用
+- immer: ステートストアの更新用
+- eventemitter3: ステートストアへのサブスクライブ用
+- shallowequal: 未使用。useSelectorで使用できるように組み込んでおく
 
 ## テスト
-    - 時間が限られているため、サンプルとして部分的に実装する。
-    - 単純なロジックテストのサンプル（Jest）
-    - E2E自動化テスト ⇒ 時間的に難しい。
+- 時間が限られているため、サンプルとして部分的に実装する。
+- 単純なロジックテストのサンプル（Jest）
+- E2E自動化テスト ⇒ 時間的に難しい。
 
 ## デモページ
-    [GitHub Pages](https://ts-akasaka.github.io/vite-15-puzzle/)
+
+[GitHub Pages](https://ts-akasaka.github.io/vite-15-puzzle/)
 
 ## TO IMPROVE（ここで実装しなかった・考慮しなかったもの）
-    - SPA
-    - SEO
-    - デザイン
-    - JS Doc
-    - アンマウント後のステート更新⇒React18では意識の必要がなくなる。
+- SPA
+- SEO
+- デザイン
+- JS Doc
+- アンマウント後のステート更新⇒React18では意識の必要がなくなる。
 
 ## ライセンス
     MIT
