@@ -71,6 +71,9 @@
     - 単純なロジックテストのサンプル（Jest）
     - E2E自動化テスト ⇒ 時間的に難しい。
 
+## デモページ
+    <https://ts-akasaka.github.io/vite-15-puzzle/>
+
 ## TO IMPROVE（ここで実装しなかった・考慮しなかったもの）
     - SPA
     - SEO

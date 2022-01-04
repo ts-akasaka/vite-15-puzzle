@@ -35,7 +35,6 @@ const handler = <T extends { onClose: (...args: any[]) => any }>(
       key={key}
       {...(props as any)}
       onClose={(...ret) => {
-        console.log("onClose")
         const idx = shownDialogs.indexOf(element);
         if (idx >= 0) {
           shownDialogs.splice(idx, 1);

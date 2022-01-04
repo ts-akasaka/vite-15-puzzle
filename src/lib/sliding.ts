@@ -54,16 +54,13 @@ export const findVacantPosOnBoard = (brd: DeepReadonly<Board>): number | null =>
  * @returns 
  */
 export const swapNumberOnBoard = (brd: DeepReadonly<Board>, pos1: number, pos2: number) => {
-  console.log({brd, pos1, pos2})
   const nbrd = [...brd];
-  console.log({nbrd: JSON.stringify(nbrd), pos1, pos2})
   if (pos1 in brd && pos2 in brd && pos1 !== pos2) {
     // const temp = nbrd[pos1];
     // nbrd[pos1] = nbrd[pos2];
     // nbrd[pos2] = temp;
     [nbrd[pos1], nbrd[pos2]] = [nbrd[pos2], nbrd[pos1]];
   }
-  console.log({nbrd: JSON.stringify(nbrd), pos1, pos2})
   return nbrd;
 }
 

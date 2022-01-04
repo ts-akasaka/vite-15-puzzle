@@ -3,7 +3,6 @@ import { createShuffledBoard, swapNumberOnBoard } from "lib/sliding";
 import { Reducer } from "store";
 
 export const swap = (pos1: number, pos2: number): Reducer => produce(draft => {
-  console.log("DRAFT", JSON.stringify(draft.board))
   draft.board = swapNumberOnBoard(draft.board, pos1, pos2);
 });
 
