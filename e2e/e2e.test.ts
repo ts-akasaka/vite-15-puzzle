@@ -5,11 +5,15 @@
 // https://github.com/smooth-code/jest-puppeteer
 // 1. yarn add -D puppeteer jest-puppeteer
 // 2. yarn add -D @types/puppeteer @types/jest-environment-puppeteer @types/expect-puppeteer
-// 3. In "jest.config.js" add
+// 3. To fix a bug in @types/jest-environment-puppeteer,
+//    yarn add -D yarn add -D @types/node@^15.14.1
+//    See 1: https://github.com/facebook/jest/issues/12187
+//    See 2: https://giters.com/facebook/jest/issues/11640
+// 4. In "jest.config.js" add
 //      "preset": "jest-puppeteer" 
-// 4. Add "@jest-environment puppeteer" comment on top of each test files like this file.
-// 5. import "expect-puppeteer".
-// 6. Now you can use "page" object.
+// 5. Add "@jest-environment puppeteer" comment on top of each test files like this file.
+// 6. import "expect-puppeteer".
+// 7. Now you can use "page" object.
 // --------------------------------------------------------
 // TO RESEARCH
 // - Using puppeteer-core & installed chrome (able to detect installed chrome on windows?)
@@ -20,7 +24,6 @@ import "../src/store/index";
 describe('E２Eテストサンプル', () => {
   beforeAll(async () => {
     await page.goto('http://localhost:3000/');
-    await new Promise(resolve => setTimeout(resolve, 1000)); // wait for components to be mounted.
   });
 
   test('HTMLタイトルに15パズルを含む', async () => {
