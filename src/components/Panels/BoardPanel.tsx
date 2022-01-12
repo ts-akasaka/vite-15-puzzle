@@ -3,6 +3,7 @@ import { Paper, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import SlideButton from "components/Buttons/SlideButton";
 import { useSelector } from "components/Providers/StoreProvider";
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -26,11 +27,18 @@ type Props = {
 const BoardPanel: FC<Props> = () => {
   const classes = useStyles();
   const board = useSelector(root => root.board);
-  return <Paper className={classes.root}>{
-    board.map((n, pos)=>(
-      <SlideButton key={n ?? 0} n={n} pos={pos} />
-    ))
-  }</Paper>;
+  return (
+    <Paper
+      className={clsx(
+        "BoardPanel",
+        classes.root
+      )}
+    >{
+      board.map((n, pos) => (
+        <SlideButton key={n ?? 0} n={n} pos={pos} />
+      ))
+    }</Paper>
+  );
 };
 
 export default BoardPanel;

@@ -5,7 +5,8 @@ import BoardPanel from "components/Panels/BoardPanel"
 import { useDialogContext } from "components/Providers/DialogProvider";
 import { useStoreContext } from "components/Providers/StoreProvider";
 import { shuffle } from "store/actions/board";
-import { setShuffling } from 'store/actions/shuffling';
+import { setShuffling } from "store/actions/shuffling";
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme: Theme) => ({
   button: {
@@ -33,7 +34,7 @@ function App() {
         </Typography>
         <BoardPanel />
         <Button
-          className={`X ${classes.button} X `}
+          className={clsx("ShuffleButton", classes.button)}
           variant="contained"
           size="large"
           color="primary"

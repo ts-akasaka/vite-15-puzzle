@@ -28,6 +28,8 @@ const iconTypes = {
 };
 
 const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+  },
   content: {
     padding: "1.5rem 1.5rem 0rem 1.5rem",
     minHeight: "6rem",
@@ -78,6 +80,10 @@ const MessageDialog: FC<Props> = ({ iconType, message, onClose, okButtonText }) 
   const { icon: Icon, iconStyle } = iconTypes[iconType ?? "info"];
   return (
     <Dialog
+      className={clsx(
+        "MessageDialog",
+        classes.root,
+      )}
       open
       maxWidth="sm"
       fullWidth

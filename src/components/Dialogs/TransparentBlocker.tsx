@@ -1,5 +1,6 @@
 import { Dialog, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import clsx from 'clsx';
 import { FC, useEffect } from 'react';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -21,7 +22,10 @@ const TransparentBlocker: FC<Props> = ({onClose, showWhile}) => {
   }, []);
   return (
     <Dialog
-      className={classes.root}
+      className={clsx(
+        "TransparentBlocker",
+        classes.root
+      )}
       open
       fullScreen
     />

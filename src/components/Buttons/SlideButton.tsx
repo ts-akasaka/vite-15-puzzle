@@ -81,7 +81,7 @@ const SlideButton: FC<Props> = (props) => {
       if (isBoardComplete(store.root.board)) {
         await new Promise(resolve => setTimeout(resolve, 1000)); // wait for end of animation
         await dialogs.message({
-          message: "１～１５の数が揃いました！"
+          message: "１～１５の数が揃いました！",
         });
       }
     }
@@ -90,6 +90,7 @@ const SlideButton: FC<Props> = (props) => {
   return (
     <Button
       className={clsx(
+        "SlideButton",
         classes.root,
         store.root.shuffling
           ? null
