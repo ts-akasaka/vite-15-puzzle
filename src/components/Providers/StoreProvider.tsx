@@ -13,16 +13,14 @@ export const useStoreContext = () => {
 export const useSelector = <T extends unknown>(fn: (root: Store["root"]) => T, compare?: (a: T, b: T) => boolean): T => {
   const store = useStoreContext();
   const [current, setCurrent] = useState<T>(()=>fn(store.root));
-  const onUpdate = useCallback(() => {
+  // コールバックの登録。store.subscribeは登録解除用の関数を返すため、
+  // アンマウント時にストアから登録解除される。
+  useEffect(() => store.subscribe(() => {
     const value = fn(store.root);
     if (compare ? compare(current, value) : current !== value) {
       setCurrent(value);
     }
-  }, []);
-  useEffect(() => {
-    store.emitter.on("update", onUpdate);
-    return () => { store.emitter.off("update", onUpdate); }
-  }, []);
+  }), []);
   return current;
 };
 export const useSelectorShallow = <T extends unknown>(fn: (root: Store["root"]) => T) => useSelector(fn, shallowEqual);
