@@ -65,7 +65,7 @@
 - material-ui/clsx: 画面のベース
 - utility-types: DeepReadonly等で利用
 - immer: ステートストアの更新用
-- eventemitter3: ステートストアへのサブスクライブ用
+- uuid: ダイアログ表示の際、Reactのキーとしてランダムな値を使用する
 - shallowequal: 未使用。useSelectorで使用できるように組み込んでおく
 
 ## テスト

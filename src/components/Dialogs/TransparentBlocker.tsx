@@ -11,15 +11,13 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 type Props = {
   onClose: () => void,
+  onError: (reason: any) => void,
   showWhile: () => Promise<void>,
 };
 
-const TransparentBlocker: FC<Props> = ({onClose, showWhile}) => {
+const TransparentBlocker: FC<Props> = ({ onClose, onError, showWhile }) => {
   const classes = useStyles();
-  useEffect(()=>{
-    // IMPROVEME: エラーの発生時、ダイアログ呼び出し元にエラーを返す。onError Propが必要。
-    showWhile().then(onClose)
-  }, []);
+  useEffect(() => { showWhile().then(onClose).catch(onError) }, []);
   return (
     <Dialog
       className={clsx(
